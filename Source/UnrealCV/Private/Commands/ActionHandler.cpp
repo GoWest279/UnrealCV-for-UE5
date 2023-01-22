@@ -91,8 +91,14 @@ FExecStatus FActionCommandHandler::SetStereoDistance(const TArray<FString>& Args
 TFunction<void(void)> FActionCommandHandler::GetReleaseKey(FKey Key)
 {
 	UWorld* World = this->GetWorld();
+	FInputKeyParams k;
+	k.Key = Key;
+	k.Event = EInputEvent::IE_Released;
+	k.NumSamples = 0;
+	k.bIsGamepadOverride = false;
 	return [=]() { 
-		World->GetFirstPlayerController()->InputKey(Key, EInputEvent::IE_Released, 0, false);
+		//World->GetFirstPlayerController()->InputKey(Key, EInputEvent::IE_Released, 0, false);
+		World->GetFirstPlayerController()->InputKey(k);
 	};
 }
 
@@ -106,6 +112,9 @@ FExecStatus FActionCommandHandler::Keyboard(const TArray<FString>& Args)
 
 	UWorld* World = this->GetWorld();
 	FKey Key(*KeyName);
+//	FInputKeyParams k0;
+//	k0.Key(*KeyName);
+
 	// The valid KeyName can be found in https://wiki.unrealengine.com/List_of_Key/Gamepad_Input_Names
 
 	// Not sure about the meaning of parameters: DeltaTime, NumSamples, bGamepad

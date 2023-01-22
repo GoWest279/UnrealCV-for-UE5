@@ -36,6 +36,10 @@ bool CaptureWithSync(UGameViewportClient *ViewportClient, const FString& Capture
 		else // Capture HDR, unable to read float16 data from here. Need to use a rendertarget.
 		{
 			CaptureFilename.Replace(TEXT(".png"), TEXT(".exr"));
+			// TCHAR a[4] = ".png";
+			// TCHAR b[4] = ".exr";
+			// CaptureFilename.Replace(a, b);
+			//CaptureFilename.Replace(".png", ".exr");
 			TArray<FFloat16Color> FloatBitmap;
 			FloatBitmap.AddZeroed(Size.X * Size.Y);
 			InViewport->ReadFloat16Pixels(FloatBitmap);

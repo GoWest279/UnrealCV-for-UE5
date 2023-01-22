@@ -165,7 +165,7 @@ void BinaryArrayFromString(const FString& Message, TArray<uint8>& OutBinaryArray
 	// OutBinaryArray.Append(CharArray);
 	// This can work, but will add tailing \0 also behavior is not well defined.
 
-	OutBinaryArray.Append((UTF8CHAR*)Convert.Get(), Convert.Length());
+	OutBinaryArray.Append((unsigned char*)Convert.Get(), Convert.Length());
 }
 
 
