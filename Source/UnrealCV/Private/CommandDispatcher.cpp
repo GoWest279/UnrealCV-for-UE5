@@ -54,7 +54,7 @@ private:
 			FPromise Promise;
 			PendingPromise.Peek(Promise);
 			FExecStatus ExecStatus = Promise.CheckStatus();
-			if (ExecStatus != FExecStatusType::Pending) // Job is finished
+			if (ExecStatus != FExecStatusType::Pending_status) // Job is finished
 			{
 				FPromise CompletedPromise;
 				FCallbackDelegate CompletedCallback;

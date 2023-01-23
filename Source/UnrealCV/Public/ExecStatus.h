@@ -34,7 +34,7 @@ enum FExecStatusType
 	OK,
 	Error,
 	// Support async task
-	Pending,
+	Pending_status,
 	AsyncQuery,
 };
 

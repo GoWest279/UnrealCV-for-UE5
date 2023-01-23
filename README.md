@@ -2,7 +2,15 @@
 
 This repo is being adapted from UnrealCV for UE4.27. Stay tuned.
 
-# UnrealCV
+## To do list
+
+1. ``SetAtmosphericFog`` has been [deprecated](https://forums.unrealengine.com/t/atmospheric-fog-is-removed-in-ue-5/586865) in UE5. So, I comment the ``ShowFlags.SetAtmosphericFog(false);`` at line ``125`` in ``ViewMode.cpp``.
+
+2. Passed the compile need tests.
+
+3. Some datatype need to be updated.
+
+# The Original README for UnrealCV
 
 [![Join the chat at https://gitter.im/unrealcv/unrealcv](https://badges.gitter.im/unrealcv/unrealcv.svg)](https://gitter.im/unrealcv/unrealcv?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Docs Status](https://readthedocs.org/projects/unrealcv/badge/?version=latest

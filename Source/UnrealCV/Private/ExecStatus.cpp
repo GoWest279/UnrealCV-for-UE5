@@ -48,7 +48,7 @@ FExecStatus FExecStatus::OK(FString InMessage)
 
 FExecStatus FExecStatus::Pending(FString InMessage)
 {
-	return FExecStatus(FExecStatusType::Pending, InMessage);
+	return FExecStatus(FExecStatusType::Pending_status, InMessage);
 }
 
 FExecStatus FExecStatus::AsyncQuery(FPromise InPromise)
@@ -75,7 +75,7 @@ FString FExecStatus::GetMessage() const // Define how to format the reply string
 		TypeName = "error"; break;
 	case FExecStatusType::AsyncQuery:
 		TypeName = "async"; break;
-	case FExecStatusType::Pending:
+	case FExecStatusType::Pending_status:
 		TypeName = "pending"; break;
 	default:
 		TypeName = "unknown FExecStatus Type";
@@ -130,7 +130,7 @@ TArray<uint8> FExecStatus::GetData() const // Define how to format the reply str
 		TypeName = "error"; break;
 	case FExecStatusType::AsyncQuery:
 		TypeName = "async"; break;
-	case FExecStatusType::Pending:
+	case FExecStatusType::Pending_status:
 		TypeName = "pending"; break;
 	default:
 		TypeName = "unknown FExecStatus Type";
